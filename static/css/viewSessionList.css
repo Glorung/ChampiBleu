@@ -1,0 +1,19 @@
+#liste{
+    margin: 10%;
+}
+
+.btn-link{
+    color :white;
+}
+.card{
+    margin-bottom: 2em;
+}
+#date{
+    float:right;
+    margin-right: 0.5em;
+    margin-top: 0.5%;
+}
+#liens{
+    margin: 1em;
+    margin-bottom: 2em;
+}
