@@ -14,7 +14,7 @@ function viewForm($view)
     $view->addBody('<div>
             <aside>
                 <div>                   
-                    <form action="index.php" method="post" >
+                    <form action="index.php?action=set" method="post" >
 
                         <h1>Ajouter une nouvelle Session</h1><br/>
                         

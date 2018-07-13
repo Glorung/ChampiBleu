@@ -6,9 +6,7 @@ require_once 'src/controller/doStagiaire.php';
 require_once 'src/controller/doForm.php';
 require_once 'src/model/set/setSession.php';
 
-if (isset ($_POST[0])){
-    setSession($id, $_POST);
-}
+
 if (!ISSET($_GET['action'])) // Display standard WebPage
 {
         doSessionList();
@@ -24,6 +22,11 @@ else // Display Webpage related to $_GET['action']
     else if ($_GET['action'] == "form") // Accessible via index.php?action=form
     {
       doForm(ISSET($_GET['id']) ? $_GET['id'] : 1);
+    }
+    else if ($_GET['action'] == "set")
+    {
+    var_dump($_POST);
+    setSession(0, $_POST);
     }
     else
         echo "404 not found !";

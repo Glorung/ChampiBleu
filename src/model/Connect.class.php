@@ -53,4 +53,9 @@ class SQL_Connect
         $answer = $tmpAnswer->fetchAll();
         return ($answer);
     }
+    
+    public function set($command)
+    {
+        $this->_dbaseClass->query($command);
+    }
 }
