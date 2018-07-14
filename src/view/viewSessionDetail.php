@@ -23,15 +23,45 @@ $tmp = "";
   }
 }
 
-function addSessionIntern($view, $name = "John Doe")
+function viewInternsBySession($view, $interns)
 {
-    
+  var_dump($interns);
+  $view->addHead('<link rel="stylesheet" href="static/css/viewInternList.css">');
+  $view->addBody('<div id="liste">');
+  $i = 0;
+  while ($i < count($interns))
+  {
+    addSessionIntern($view, $interns[$i]['nom_Prenom']);
+    $i = $i + 1;
+  }
+  $view->addBody("</div>");
 }
 
+function addSessionIntern($view, $name = "John Doe")
+{
+  $view->addBody('<div class="container">');
+  $view->addBody('<div class="row">');
+  $view->addBody('<div class="col-sm-3">');
+  $view->addBody('<div class="card">');
+  $view->addBody('<canvas class="header-bg" width="250" height="70" id="img">');
+  $view->addBody('</canvas>');
+  $view->addBody('<div class="avatar">');
+  $view->addBody('<div class="container-img">');
+  $view->addBody('<img src="http://www2.mes-coloriages-preferes.biz/colorino/Images/Large/Personnages-celebres-Les-Schtroumpfs/Schtroumpfette-684184.png" style>');
+  $view->addBody('</div>');
+  $view->addBody('</div>');
+  $view->addBody('<div class="content">');
+  $view->addBody('<p>' . $name .'</p>');
+  $view->addBody('<p><button type="button" class="btn btn-default">Info</button></p>');
+  $view->addBody('</div>');
+  $view->addBody('</div>');
+  $view->addBody('</div>');
+  $view->addBody('</div>');
+  $view->addBody('</div>');
+  $view->addBody('</div>');
+}
 
-
-
-function viewSessionDetail($view, $info, $detail)
+function viewSessionDetail($view, $info, $detail, $interns)
 {
   viewTopNav($view);
   $view->addHead('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">');
@@ -61,31 +91,7 @@ function viewSessionDetail($view, $info, $detail)
   $view->addBody("</div>");
   $view->addBody("</div>");
 
-$view->addHead('<link rel="stylesheet" href="static/css/viewInternList.css">');
-$view->addBody('<div id="liste">
-    <div class="container">
+  viewInternsBySession($view, $interns);
 
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="card">
-                    <canvas class="header-bg" width="250" height="70" id="img">
-
-                    </canvas>
-                    <div class="avatar">
-                        <div class="container-img">
-                             <img src="http://www2.mes-coloriages-preferes.biz/colorino/Images/Large/Personnages-celebres-Les-Schtroumpfs/Schtroumpfette-684184.png" style>
-                        </div>
-                       
-                    </div>
-                    <div class="content">
-                        <p>Schtrumpfette</p>
-                        <p><button type="button" class="btn btn-default">Info</button></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>');
-  $view->addBody("</div>");
   $view->viewAll();
 }

@@ -3,7 +3,7 @@
 require_once('src/model/Connect.class.php');
 
 // Get Sessions where the intern $id is registered
-function getStagiaireSession($id)
+function getInternBySession($id)
 {
     $command = "SELECT CONCAT(NOM_STAGIAIRE,' ',PRENOM_STAGIAIRE) AS nom_Prenom," .
                 " nom_session," .
