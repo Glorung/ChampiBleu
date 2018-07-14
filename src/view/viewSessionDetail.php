@@ -18,7 +18,7 @@ $tmp = "";
            $view->addBody('<tr><td colspan=2>' . $detail[$i]['NOM_CATEGORIE'] . "</td></tr>");
       }
     $view->addBody('<tr><td>' . $detail[$i]['NOM_MODULE'] . "</td><td>" .
-  $detail[$i]['nb_jours'] . ' jours</td></tr>');
+    $detail[$i]['nb_jours'] . ' jours</td></tr>');
     $i = $i + 1;
   }
 }
