@@ -8,4 +8,11 @@ function doForm($id)
   viewForm(new view());
 }
 
+
+function doFormNewEtudient($id)
+{
+  // Appel de la fonction que tu dois implementer
+  viewNewEtudient(new view());
+}
+
 ?>

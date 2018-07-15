@@ -42,7 +42,7 @@ function addSessionIntern($view, $name = "John Doe")
   $view->addBody('<div class="container">');
   $view->addBody('<div class="row">');
   $view->addBody('<div class="col-sm-3">');
-  $view->addBody('<div class="card">');
+  $view->addBody('<div id="carte">');
   $view->addBody('<canvas class="header-bg" width="250" height="70" id="img">');
   $view->addBody('</canvas>');
   $view->addBody('<div class="avatar">');

@@ -3,7 +3,7 @@
   display: none;
 }
 
-.card {
+#carte {
   overflow: hidden;
   position: relative;
   border: 1px solid #CCC;
@@ -14,7 +14,7 @@
   color: rgb(136, 172, 217);
 }
 
-.card .header-bg {
+#carte .header-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@
   border-bottom: 1px #FFF solid;	
   z-index: 1;
 }
-.card .avatar {
+#carte .avatar {
   position: relative;
   margin-top: 15px;
   z-index: 100;
@@ -31,7 +31,7 @@
 
 }
 
-.card .avatar .container-img {
+#carte .avatar .container-img {
   margin: auto;
   width: 100px;
   height: 100px;
@@ -47,10 +47,10 @@
     width: 100%;
 }
 #img{
-    background-image: url(fond.jpg);
+    background-image: url(../../img/fond.jpg);
     background-repeat:no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: 150%;
 }
 #liste{
             padding-left: 2%;

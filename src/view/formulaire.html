@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+<!--
+formulaire d'une nouvelle catégorie
+-->
+        <form action="traitement.php" method="post" >
+
+                        <h1>Nouvelle catégorie</h1><br/>
+                        <input placeholder="nom" type="text" name="NomCategorie" /><br/>
+                        
+                        <label for="CGU">Veuillez valider<input id="CGU" type="checkbox" name="CGU" required /></label><br/>
+                        <input id="Valider" type="submit" value="Envoyer">
+                        <input id="Annuler" type="reset" value="Annuler">
+
+                    </form>
+    </body>
+</html>
