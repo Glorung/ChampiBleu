@@ -16,13 +16,12 @@ function viewNewModule($view, $data)
                 <div>                   
                     <form action="index.php?action=set&id=4" method="post" >
 
-                        <h1>Ajout d\'une catégorie</h1><br/>
+                        <h1>Ajout d\'un nouveau module</h1><br/>
                         <input placeholder="nom du module" type="text" name="NomModule" /><br/>    
                         
                         <select name="Idcategorie"> 
                         <optgroup>
                              <option value="">Catégories</option>');
-                               var_dump($data);
                                $i = 0;
                                while ($i < count($data))
                                {

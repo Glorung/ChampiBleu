@@ -2,7 +2,7 @@
 
 require_once('src/model/Connect.class.php');
 
-function setCategorie($id, $post)
+function setCategorie($post)
 {
     $command = "INSERT INTO  CATEGORIE (NOM_CATEGORIE)".
                 " VALUES ('" . $post['NomCategorie'] . "')";

@@ -5,6 +5,7 @@ require_once('src/view/viewNewEtudient.php');
 require_once('src/view/viewNewCategorie.php');
 require_once('src/view/viewNewModule.php');
 require_once('src/view/viewNewSessionModule.php');
+require_once('src/view/viewNewStagiaireSession.php');
 require_once('src/model/getset/getsetModule.php');
 require_once('src/model/getset/getsetSessionModule.php');
 require_once('src/model/getset/getsetStagiaireSession.php');
@@ -30,5 +31,9 @@ else if ($id==4)
 else if ($id==5)
 {
   viewNewSessionModule(new view(), getListeSession(),getListeModule() );
+}
+else if ($id==6)
+{
+  viewNewStagiaireSession(new view(), getListeSessions(),getListeStagiaire() );
 }
 }

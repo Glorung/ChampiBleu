@@ -1,7 +1,7 @@
 <?php
 
 // Affichage du gestionnaire de session/stagiaires
-function viewNewSessionModule($view, $data, $data2)
+function viewNewStagiaireSession($view, $data, $data2)
 {
     viewTopNav($view);
     
@@ -14,18 +14,17 @@ function viewNewSessionModule($view, $data, $data2)
     $view->addBody('<div>
             <aside>
                 <div>                   
-                    <form action="index.php?action=set&id=5" method="post" >
+                    <form action="index.php?action=set&id=6" method="post" >
 
-                        <h1>définir la durée du module</h1><br/>
-                        <input placeholder="nombre de jour du module" type="number" name="nbJour" /><br/>    
+                        <h1>Inscrire un lève à une session</h1><br/>
                         
-                        <select name="IdModule"> 
+                        <select name="IdStagiaire"> 
                         <optgroup>
-                             <option value="">Nom Module</option>');
+                             <option value="">Nom du Stagiaire</option>');
                                $i = 0;
                                while ($i < count($data2))
                                {
-                               $view->addBody('<option value="'. $data2[$i]['ID_MODULE'] .'">' . $data2[$i]['NOM_MODULE'] . '</option>'); 
+                               $view->addBody('<option value="'. $data2[$i]['ID_STAGIAIRE'] .'">' . $data2[$i]['PRENOM_STAGIAIRE'] . '</option>'); 
                                 $i = $i + 1;
                                } 
                         $view->addBody('       </optgroup>
