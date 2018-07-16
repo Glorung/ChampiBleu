@@ -34,6 +34,8 @@ else // Display Webpage related to $_GET['action']
             setNewEtudient( $_POST);
         else if ($id == 3)
             setCategorie( $_POST);
+        else if ($id == 4)
+            setModule( $_POST);
     }
     else
         echo "404 not found !";
