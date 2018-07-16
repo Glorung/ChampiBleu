@@ -22,6 +22,7 @@ function viewCards($view, $colors, $data)
     $j = $j + 1;
     if ($j > count($colors))
       $j = 0;
+    // salut
   }
   $view->addBody('</div>');
 }
