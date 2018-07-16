@@ -1,7 +1,7 @@
 <?php
 
 // Affichage du gestionnaire de session/stagiaires
-function viewNewSessionModule($view, $data)
+function viewNewSessionModule($view, $data, $data2)
 {
     viewTopNav($view);
     

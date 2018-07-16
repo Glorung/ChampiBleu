@@ -3,12 +3,22 @@
 require_once('src/model/Connect.class.php');
 
 // Get advanced info on a specific session
-function getSessionModule() 
+function getListeSession() 
 {
-    $command =  "SELECT m.ID_MODULE, NOM_MODULE, s.ID_SESSION, NOM_SESSION".
-                 " FROM MODULE m, SESSION s, SESSION_MODULE sm".
-                 " WHERE m.ID_MODULE = sm.ID_MODULE".
-                 " AND s.ID_SESSION = sm.ID_SESSION";
+    $command =  "SELECT ID_SESSION, NOM_SESSION".
+                " FROM SESSION";
+    $elanDb = new SQL_Connect();
+    // Create a new SQL_Connect object which is connecting to the Elan's Database
+    $elanDb->connect("Arnaud_ChampiBleu");
+    // Connect to the Arnaud_ChampiBleu database
+    $answer = $elanDb->ask($command);
+    // Execute the SQL command and return an array
+    return ($answer);
+}
+function getListeModule() 
+{
+    $command =  "SELECT ID_MODULE, NOM_MODULE".
+                " FROM MODULE";
     $elanDb = new SQL_Connect();
     // Create a new SQL_Connect object which is connecting to the Elan's Database
     $elanDb->connect("Arnaud_ChampiBleu");
@@ -29,6 +39,4 @@ function setSessionModule($id, $post)
     $elanDb->set($command);
     // Execute the SQL command and return an array coucou
 }
-
-
 

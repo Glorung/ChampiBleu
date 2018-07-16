@@ -29,6 +29,6 @@ else if ($id==4)
 }
 else if ($id==5)
 {
-  viewNewSessionModule(new view(), getSessionModule());
+  viewNewSessionModule(new view(), getListeSession(),getListeModule() );
 }
 }
