@@ -1,6 +1,7 @@
 <?php
 require_once('src/view/baseView/viewTopNav.php');
 require_once('src/model/dataType/Card.class.php');
+require_once('src/model/get/getInternNumber.php');
 
 function viewCards($view, $colors, $data)
 {
@@ -9,12 +10,13 @@ function viewCards($view, $colors, $data)
   $j = 0;
   while ($i < count($data))
   {
+    $nbInternInSession = getInternNumber($data[$i]['ID_SESSION']);
     $cardData = new Card;
     $cardData->number = $i + 1;
     $cardData->color = $colors[$i];
     $cardData->sessionName = $data[$i]['NOM_SESSION'];
     $cardData->sessionDuration =  "Du " . $data[$i]['DATE_DEBUT'] . " au " . $data[$i]['DATE_FIN'];
-    $cardData->sessionPlace = $data[$i]['nbPlacePrises'] . "/" . $data[$i]['NB_PLACE'];
+    $cardData->sessionPlace = ISSET($nbInternInSession[0]) ? $nbInternInSession[0]['nbPlacePrises'] . "/" . $data[$i]['NB_PLACE'] : "0/" . $data[$i]['NB_PLACE'];
     $cardData->sessionDescription = $data[$i]['DESCRIPTION'];
     $cardData->sessionId = $data[$i]['ID_SESSION'];
     addCard($view, $cardData);

@@ -10,11 +10,9 @@ function getSessionInfo($id)
                 " DATE_DEBUT," .
                 " DATE_FIN," . 
                 " NB_PLACE," .
-                " count(ID_STAGIAIRE) AS nbInscris," .
                 " DESCRIPTION" .
-                " from SESSION s, STAGIAIRE_SESSION ss" .
-                " where s.ID_SESSION = ss.ID_SESSION" .
-                " and s.ID_SESSION = " . $id .
+                " from SESSION s" .
+                " where s.ID_SESSION = " . $id .
                 " group by s.NOM_SESSION";
     $elanDb = new SQL_Connect();
     // Create a new SQL_Connect object which is connecting to the Elan's Database
