@@ -7,6 +7,9 @@ require_once 'src/controller/doForm.php';
 require_once 'src/model/set/setSession.php';
 require_once 'src/model/set/setNewEtudient.php';
 require_once 'src/model/set/setCategorie.php';
+require_once 'src/model/getset/getsetSessionModule.php';
+require_once 'src/model/getset/getsetModule.php';
+require_once 'src/model/getset/getsetStagiaireSession.php';
 
 
 if (!ISSET($_GET['action'])) // Display standard WebPage
@@ -35,7 +38,11 @@ else // Display Webpage related to $_GET['action']
         else if ($id == 3)
             setCategorie( $_POST);
         else if ($id == 4)
-            setModule( $_POST);
+            getsetModule( $_POST);
+        else if ($id == 5)
+            getsetSessionModule( $_POST);
+        else if ($id == 6)
+            getsetStagiaireSession( $_POST);
     }
     else
         echo "404 not found !";
