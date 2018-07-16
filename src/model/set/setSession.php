@@ -2,7 +2,7 @@
 
 require_once('src/model/Connect.class.php');
 
-function setSession($id, $post)
+function setSession($post)
 {
     $command = "INSERT INTO SESSION(nom_session, date_debut, date_fin, nb_place, description )".
                 " VALUES ('" . $post['sessionName'] . "','" . $post['dateDebut'] . "','" . $post['dateFin']  . "','" . $post['placeDisponible'] . "','" . $post['description']."')";

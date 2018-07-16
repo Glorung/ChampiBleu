@@ -2,10 +2,10 @@
 
 require_once('src/model/Connect.class.php');
 
-function setNewEtudient($id, $post)
+function setNewEtudient($post)
 {
-    $command = "INSERT INTO fiche_stagiaire (NOM_STAGIAIRE, PRENOM_STAGIAIRE, SEXE, VILLE, DATE_NAISSANCE, EMAIL, TELEPHONE)".        
-                "VALUES ('" . $post['NomStagiaire'] . "','" . $post['PrenomStagiaire'] . "','" . $post['SexeStagiaire']  . "','" . $post['VilleStagiaire'] . "','" . $post['DateNaissanceStagiaire']."','" . $post['EmailStagiaire'] . "','" . $post['TelephoneStagiaire'] . ")";
+    $command = "INSERT INTO FICHE_STAGIAIRE(NOM_STAGIAIRE, PRENOM_STAGIAIRE, SEXE, VILLE, DATE_NAISSANCE, EMAIL, TELEPHONE)".        
+                "VALUES ('" . $post['NomStagiaire'] . "','" . $post['PrenomStagiaire'] . "','" . $post['SexeStagiaire']  . "','" . $post['VilleStagiaire'] . "','" . $post['DateNaissanceStagiaire']."','" . $post['EmailStagiaire'] . "','" . $post['TelephoneStagiaire'] . "')";
     echo $command;
     $elanDb = new SQL_Connect();
     // Create a new SQL_Connect object which is connecting to the Elan's Database
