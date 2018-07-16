@@ -8,12 +8,9 @@ function getSessionList()
             " DATE_DEBUT," . 
             " DATE_FIN," .
             " NB_PLACE," .
-            " COUNT(ID_Stagiaire) AS nbPlacePrises," .
-            " NB_PLACE -(COUNT(ID_Stagiaire)) AS nbPlaceRestante," .
             " DESCRIPTION," .
-            " s.ID_SESSION" .
-            " FROM SESSION s, STAGIAIRE_SESSION ss" .
-            " WHERE s.ID_SESSION = ss.ID_SESSION" .
+            " ID_SESSION" .
+            " FROM SESSION" .
             " GROUP BY NOM_SESSION" .
             " ORDER BY DATE_DEBUT";
     $elanDb = new SQL_Connect();

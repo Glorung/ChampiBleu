@@ -1,5 +1,7 @@
 <?php
 
+require_once('src/model/get/getInternNumber.php');
+
 function viewSessionDetailInfo($view, $info)
 {
   $view->addBody('<tr><td colspan=2>' . $info[0]['DESCRIPTION'] . '</td></tr>');
@@ -77,7 +79,10 @@ function viewSessionDetail($view, $info, $detail, $interns)
   $view->addBody("<button class='btn btn-link' data-toggle='collapse' data-target='#collapse1' aria-expanded='false' aria-controls='collapse'1>");
   $view->addBody($info[0]['NOM_SESSION']);
   $view->addBody("</button>");
-  $view->addBody("<span id='date' class='badge badge-light'>" . $info[0]['nbInscris'] . " / " . $info[0]['NB_PLACE'] . "</span>");
+  $internNumberInSession = getInternNumber($info[0]['ID_SESSION']);
+  $view->addBody("<span id='date' class='badge badge-light'>" . (ISSET($internNumberInSession[0])
+          ? $internNumberInSession[0]['nbPlacePrises'] . " / " . $info[0]['NB_PLACE'] . "</span>"
+          : "0 / " . $info[0]['NB_PLACE'] . "</span>"));
   $view->addBody("<span id='date' class='badge badge-light'>" . "Du " . $info[0]['DATE_DEBUT'] . " au " . $info[0]['DATE_FIN'] . "</span>");
   $view->addBody("</h5>");
   $view->addBody("</div>");
