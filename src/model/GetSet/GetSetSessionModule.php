@@ -27,7 +27,7 @@ function setSessionModule($id, $post)
     $elanDb->connect("Arnaud_ChampiBleu");
     // Connect to the Arnaud_ChampiBleu database
     $elanDb->set($command);
-    // Execute the SQL command and return an array
+    // Execute the SQL command and return an array coucou
 }
 
 
