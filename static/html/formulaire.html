@@ -7,13 +7,24 @@
     <body>
 
 <!--
-formulaire d'une nouvelle catégorie
+formulaire 
 -->
-        <form action="traitement.php" method="post" >
+   
+<form action="index.php?action=set&id=4" method="post" >
 
-                        <h1>Nouvelle catégorie</h1><br/>
-                        <input placeholder="nom" type="text" name="NomCategorie" /><br/>
+                        <h1>Ajout d'une catégorie</h1><br/>
+                        <input placeholder="nom du module" type="text" name="NomModule" /><br/>    
                         
+                        <select name="menu_destination"> 
+                        <optgroup label="Catégories">
+                             <option value="http://www.monsite.net/accueil.html"></option> 
+                             <option value="http://www.monsite.net/apropos.html"></option> 
+                             <option value="http://www.monsite.net/contact.html"></option> 
+                             <option value="http://www.monsite.net/plan.html"></option> 
+                        </optgroup>
+                        </select>
+
+
                         <label for="CGU">Veuillez valider<input id="CGU" type="checkbox" name="CGU" required /></label><br/>
                         <input id="Valider" type="submit" value="Envoyer">
                         <input id="Annuler" type="reset" value="Annuler">
