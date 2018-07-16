@@ -10,7 +10,7 @@ function doSessionDetail($id)
 {
     $dataDetail = getSessionDetail($id);
     $dataInfo = getSessionInfo($id);
-    $internList = array(array("nom_Prenom"=>"John doe"));//getInternsBySessionId($id);
+    $internList = getInternsBySessionId($id);
     // Récupère les informations du stagiaire sous forme de tableau associatif
     viewSessionDetail(new view(), $dataInfo, $dataDetail, $internList);
 }
