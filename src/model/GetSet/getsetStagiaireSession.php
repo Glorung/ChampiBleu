@@ -3,7 +3,7 @@
 require_once('src/model/Connect.class.php');
 
 // Get advanced info on a specific session
-function getListeSessions() 
+function getListeSession() 
 {
     $command =  "SELECT ID_SESSION, NOM_SESSION".
                 " FROM SESSION";
@@ -15,10 +15,10 @@ function getListeSessions()
     // Execute the SQL command and return an array
     return ($answer);
 }
-function getListeStagiaire() 
+function getListeModule() 
 {
-    $command =  "SELECT ID_STAGIAIRE, PRENOM_STAGIAIRE".
-                " FROM FICHE_STAGIAIRE";
+    $command =  "SELECT ID_MODULE, NOM_MODULE".
+                " FROM MODULE";
     $elanDb = new SQL_Connect();
     // Create a new SQL_Connect object which is connecting to the Elan's Database
     $elanDb->connect("Arnaud_ChampiBleu");
@@ -27,10 +27,10 @@ function getListeStagiaire()
     // Execute the SQL command and return an array
     return ($answer);
 }
-function setStagiaireSession($id, $post)
+function setSessionModule($id, $post)
 {
-    $command = "INSERT INTO STAGIAIRE_SESSION(ID_STAGIAIRE, ID_SESSION)".
-                " VALUES ('" . $post['IdStagiaire'] . "','".$post['IdSession']."')";
+    $command = "INSERT INTO SESSION_MODULE(ID_MODULE, ID_SESSION, NB_JOURS)".
+                " VALUES ('" . $post['NomModule'] . "','".$post['Idcategorie']."','".$post['nbJour']."')";
     echo $command;
     $elanDb = new SQL_Connect();
     // Create a new SQL_Connect object which is connecting to the Elan's Database

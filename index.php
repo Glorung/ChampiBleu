@@ -11,8 +11,9 @@ require_once 'src/model/getset/getsetSessionModule.php';
 require_once 'src/model/getset/getsetModule.php';
 require_once 'src/model/getset/getsetStagiaireSession.php';
 
-
-if (!ISSET($_GET['action'])) // Display standard WebPage
+if (!ISSET($_GET['action']))    // Display standard WebPage
+    doSessionList();
+else                            // Display Webpage related to $_GET['action']
 {
         doSessionList();
 }
@@ -36,13 +37,13 @@ else // Display Webpage related to index.php?action=[action]
         else if ($id == 2)
             setNewEtudient($_POST);
         else if ($id == 3)
-            setCategorie($_POST);
-        /* else if ($id == 4) */
-        /*     getsetModule($_POST); */
-        /* else if ($id == 5) */
-        /*     getsetSessionModule($_POST); */
-        /* else if ($id == 6) */
-        /*     getsetSessionModule($_POST); */
+            setCategorie( $_POST);
+        else if ($id == 4)
+            getsetModule( $_POST);
+        else if ($id == 5)
+            getsetSessionModule( $_POST);
+        else if ($id == 6)
+            getsetStagiaireSession( $_POST);
     }
     else
         echo "404 not found !";
