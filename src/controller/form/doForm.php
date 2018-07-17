@@ -1,31 +1,39 @@
 <?php
 
-require_once('src/view/viewForm.php');
-require_once('src/view/viewNewEtudient.php');
-require_once('src/view/viewNewCategorie.php');
-require_once('src/view/viewNewModule.php');
-require_once('src/view/viewNewSessionModule.php');
-require_once('src/view/viewNewStagiaireSession.php');
+// doForm require
+require_once('src/view/form/viewFormSession.php');
+require_once('src/view/form/viewFormIntern.php');
+require_once('src/view/form/viewFormCategorie.php');
+require_once('src/view/form/viewFormModule.php');
+require_once('src/view/form/viewFormSessionModule.php');
+require_once('src/view/form/viewFormStagiaireSession.php');
+
+// doSetForm require
 require_once('src/model/getset/getsetModule.php');
 require_once('src/model/getset/getsetSessionModule.php');
 require_once('src/model/getset/getsetStagiaireSession.php');
 
+// doSetForm require
+require_once('src/model/set/setSession.php');
+require_once('src/model/set/setCategorie.php');
+require_once('src/model/set/setNewEtudient.php');
+
 function doForm($id)
 {
   if ($id == 1)
-    viewForm(new view());
+    viewFormSession(new view());
   else if ($id == 2)
-    viewNewEtudient(new view());
+    viewFormIntern(new view());
   else if ($id == 3)
-    viewNewCategorie(new view());
+    viewFormCategorie(new view());
   else if ($id == 4)
-    viewNewModule(new view(), getIdModule());
+    viewFormModule(new view(), getIdModule());
   else if ($id == 5)
-    viewNewSessionModule(new view(), getListeSession(), getListeModule());
+    viewFormSessionModule(new view(), getListeSession(), getListeModule());
   else if ($id == 6)
-    viewNewStagiaireSession(new view(),
-			    getListeSessions(),
-			    getListeStagiaire());
+    viewFormStagiaireSession(new view(),
+			    getConnard(),
+			    getPeopleID());
 }
 
 function doSetForm($id)
@@ -42,5 +50,5 @@ function doSetForm($id)
   else if ($id == 5)
     setSessionModule($_POST);
   else if ($id == 6)
-    setStagiaireSession($_POST);
+    setNewPeopleSession($_POST);
 }

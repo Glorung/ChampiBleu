@@ -1,7 +1,7 @@
 <?php
 
 // Affichage du gestionnaire de session/stagiaires
-function viewNewSessionModule($view, $data, $data2)
+function viewFormModule($view, $data)
 {
     viewTopNav($view);
     
@@ -16,31 +16,21 @@ function viewNewSessionModule($view, $data, $data2)
                 <div>                   
                     <form action="index.php?action=set&id=4" method="post" >
 
-                        <h1>définir la durée du module</h1><br/>
+                        <h1>Ajout d\'un nouveau module</h1><br/>
+                        <input placeholder="nom du module" type="text" name="NomModule" /><br/>    
                         
-                        <select name="IdModule"> 
+                        <select name="Idcategorie"> 
                         <optgroup>
-                             <option value="">Nom Module</option>');
-                               $i = 0;
-                               while ($i < count($data2))
-                               {
-                               $view->addBody('<option value="'. $data2[$i]['ID_MODULE'] .'">' . $data2[$i]['NOM_MODULE'] . '</option>'); 
-                                $i = $i + 1;
-                               } 
-                        $view->addBody('       </optgroup>
-                        </select>
-
-                        <select name="IdSession"> 
-                        <optgroup>
-                             <option value="">Nom Session</option>');
+                             <option value="">Catégories</option>');
                                $i = 0;
                                while ($i < count($data))
                                {
-                               $view->addBody('<option value="'. $data[$i]['ID_SESSION'] .'">' . $data[$i]['NOM_SESSION'] . '</option>'); 
+                               $view->addBody('<option value="'. $data[$i]['ID_CATEGORIE'] .'">' . $data[$i]['NOM_CATEGORIE'] . '</option>'); 
                                 $i = $i + 1;
                                } 
-                        $view->addBody('       </optgroup>
+ $view->addBody('       </optgroup>
                         </select>
+
 
                         <label for="CGU">Veuillez valider<input id="CGU" type="checkbox" name="CGU" required /></label><br/>
                         <input id="Valider" type="submit" value="Envoyer">

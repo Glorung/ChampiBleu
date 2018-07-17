@@ -1,6 +1,6 @@
 <?php
 
-require_once('src/model/Connect.class.php');
+require_once('src/model/class/Connect.class.php');
 
 function setSession($post)
 {

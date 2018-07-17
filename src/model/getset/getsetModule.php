@@ -1,14 +1,18 @@
 <?php
 
-require_once('src/model/Connect.class.php');
+require_once('src/model/class/Connect.class.php');
 
 function setModule($post)
 {
-    $command = "INSERT INTO  MODULE (NOM_MODULE, ID_CATEGORIE)".
-                " VALUES ('" . $post['NomModule'] . "','".$post['Idcategorie']."')";
+  var_dump($post);
+  $command = "INSERT INTO  MODULE (" .
+      "NOM_MODULE," .
+      " ID_CATEGORIE)" .
+      " VALUES ('" . $post['NomModule'] .
+      "', '" . $post['Idcategorie'] . "')";
     echo $command;
     $elanDb = new SQL_Connect();
-    // Create a new SQL_Connect object which is connecting to the Elan's Database
+    // Create a new SQL_Connect object
     $elanDb->connect("Arnaud_ChampiBleu");
     // Connect to the Arnaud_ChampiBleu database
     $elanDb->set($command);
@@ -27,7 +31,8 @@ function getIdModule()
     $elanDb->connect("Arnaud_ChampiBleu");
     // Se connecte à la base de donnée Arnaud_ChampiBleu
     $answer = $elanDb->ask($command);
-    // Execute la commande SQL et recupère la réponse sous forme de tableau associatif
+    // Execute la commande SQL_Connect
+    // Recupère la réponse sous forme de tableau associatif
     return ($answer);
 }
 ?>

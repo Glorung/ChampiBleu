@@ -1,6 +1,6 @@
 <?php
 
-require_once('src/model/get/getInternNumber.php');
+require_once('src/model/get/getIntern.php');
 
 function viewSessionDetailInfo($view, $info)
 {
@@ -78,7 +78,7 @@ function viewSessionDetail($view, $info, $detail, $interns)
   $view->addBody("<button class='btn btn-link' data-toggle='collapse' data-target='#collapse1' aria-expanded='false' aria-controls='collapse'1>");
   $view->addBody($info[0]['NOM_SESSION']);
   $view->addBody("</button>");
-  $internNumberInSession = getInternNumber($info[0]['ID_SESSION']);
+  $internNumberInSession = getInternsNumberBySessionId ($info[0]['ID_SESSION']);
   $view->addBody("<span id='date' class='badge badge-light'>" . (ISSET($internNumberInSession[0])
           ? $internNumberInSession[0]['nbPlacePrises'] . " / " . $info[0]['NB_PLACE'] . "</span>"
           : "0 / " . $info[0]['NB_PLACE'] . "</span>"));

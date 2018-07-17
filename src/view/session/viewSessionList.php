@@ -1,7 +1,10 @@
 <?php
-require_once('src/view/baseView/viewTopNav.php');
+  // card class
 require_once('src/model/dataType/Card.class.php');
-require_once('src/model/get/getInternNumber.php');
+// top navbar
+require_once('src/view/baseView/viewTopNav.php');
+// getter
+require_once('src/model/get/getIntern.php');
 
 function viewCards($view, $colors, $data)
 {
@@ -10,7 +13,7 @@ function viewCards($view, $colors, $data)
   $j = 0;
   while ($i < count($data))
   {
-    $nbInternInSession = getInternNumber($data[$i]['ID_SESSION']);
+    $nbInternInSession = getInternsNumberBySessionId($data[$i]['ID_SESSION']);
     $cardData = new Card;
     $cardData->number = $i + 1;
     $cardData->color = $colors[$i];

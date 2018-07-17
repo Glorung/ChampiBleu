@@ -1,7 +1,7 @@
 <?php
 
 // Affichage du gestionnaire de session/stagiaires
-function viewNewCategorie($view)
+function viewFormCategorie($view)
 {
     viewTopNav($view);
 

@@ -1,7 +1,7 @@
 <?php
-require_once('src/view/view.class.php');
-require_once('src/model/get/getSessionList.php');
-require_once('src/view/viewSessionList.php');
+
+require_once('src/model/get/getSession.php');
+require_once('src/view/session/viewSessionList.php');
 
 function doSessionList()
 {

@@ -1,10 +1,9 @@
 <?php
 
-require_once('src/model/get/getSessionDetail.php');
-require_once('src/model/get/getSessionInfo.php');
-require_once('src/model/get/getInternsBySessionId.php');
-require_once('src/view/viewSessionDetail.php');
-require_once('src/view/view.class.php');
+require_once('src/model/get/getSession.php');
+require_once('src/model/get/getIntern.php');
+
+require_once('src/view/session/viewSessionDetail.php');
 
 function doSessionDetail($id)
 {

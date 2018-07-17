@@ -1,8 +1,7 @@
 <?php
 
-require_once('src/model/get/getStagiaire.php');
-require_once('src/view/viewStagiaire.php');
-require_once('src/view/view.class.php');
+require_once('src/model/get/getIntern.php');
+require_once('src/view/intern/viewIntern.php');
 
 function doInternByID($id)
 {

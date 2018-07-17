@@ -1,6 +1,6 @@
 <?php
 
-require_once('src/view/view.class.php');
+require_once('src/model/class/View.class.php');
 
 function viewTopNav($view)
 {
