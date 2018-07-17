@@ -19,7 +19,7 @@ function setModule($post)
 
 function getIdModule()
 {
-    $command = "SELECT ID_CATEGORIE, NOM_CATEGORIE". 
+    $command = "SELECT ID_CATEGORIE, NOM_CATEGORIE".
                 " FROM CATEGORIE";
     // Définition de la commande SQL avec l'ID
     $elanDb = new SQL_Connect();

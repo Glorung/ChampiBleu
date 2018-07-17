@@ -27,7 +27,6 @@ $tmp = "";
 
 function viewInternsBySession($view, $interns)
 {
-  var_dump($interns);
   $view->addHead('<link rel="stylesheet" href="static/css/viewInternList.css">');
   $view->addBody('<div id="liste">');
   $i = 0;
