@@ -3,6 +3,10 @@
 // Affichage du gestionnaire de session/stagiaires
 function viewFormSessionModule($view, $data, $data2)
 {
+  echo "data<br>";
+  var_dump($data);
+    echo "data2<br>";
+    var_dump($data2);
     viewTopNav($view);
     
     // Pour ajouter quelque chose au <head></head>

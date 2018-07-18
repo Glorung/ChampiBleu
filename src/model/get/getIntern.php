@@ -2,6 +2,20 @@
 
 require_once('src/model/class/Connect.class.php');
 
+// Get interns list
+function getInterns()
+{
+    $command =  "SELECT ID_STAGIAIRE, PRENOM_STAGIAIRE".
+                " FROM FICHE_STAGIAIRE";
+    $elanDb = new SQL_Connect();
+    // Create a new SQL_Connect object
+   $elanDb->connect("Arnaud_ChampiBleu");
+    // Connect to the Arnaud_ChampiBleu database
+    $answer = $elanDb->ask($command);
+    // Execute the SQL command and return an array
+    return ($answer);
+}
+
 // Get data from a specific intern, by his id
 function getInternById($id)
 {
