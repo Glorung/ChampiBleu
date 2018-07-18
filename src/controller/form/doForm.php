@@ -1,6 +1,7 @@
 <?php
 
 // doForm require
+require_once('src/view/form/viewForm.php');
 require_once('src/view/form/viewFormSession.php');
 require_once('src/view/form/viewFormIntern.php');
 require_once('src/view/form/viewFormCategorie.php');
@@ -24,7 +25,9 @@ require_once('src/model/get/getCategorie.php');
 
 function doForm($id)
 {
-  if ($id == 1)
+  if ($id == 0)
+    viewForm(new view());
+  else if ($id == 1)
     viewFormSession(new view());
   else if ($id == 2)
     viewFormIntern(new view());
@@ -42,7 +45,6 @@ function doForm($id)
 
 function doSetForm($id)
 {
-  $id = ISSET($_GET['id']) ? $_GET['id'] : 1;
   if ($id == 1)
     setSession($_POST);
   else if ($id == 2)

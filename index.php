@@ -25,7 +25,7 @@ else
     else if ($_GET['action'] == "viewSessionIntern") // action=viewSessionIntern
       doInternById($_GET['id']);
     else if ($_GET['action'] == "form") // action=form
-      doForm(ISSET($_GET['id']) ? $_GET['id'] : 1);
+      doForm(ISSET($_GET['id']) ? $_GET['id'] : 0);
     else if ($_GET['action'] == "set") // action=set
       doSetForm($_GET['id']);
     else
