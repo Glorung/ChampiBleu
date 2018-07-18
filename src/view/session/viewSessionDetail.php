@@ -32,13 +32,13 @@ function viewInternsBySession($view, $interns)
   $i = 0;
   while ($i < count($interns))
   {
-    addSessionIntern($view, $interns[$i]['nom_Prenom']);
+    addSessionIntern($view, $interns[$i]);
     $i = $i + 1;
   }
   $view->addBody("</div>");
 }
 
-function addSessionIntern($view, $name = "John Doe")
+function addSessionIntern($view, $interns)
 {
   $view->addBody('<div class="container">');
   $view->addBody('<div class="row">');
@@ -52,11 +52,12 @@ function addSessionIntern($view, $name = "John Doe")
   $view->addBody('</div>');
   $view->addBody('</div>');
   $view->addBody('<div class="content">');
-  $view->addBody('<p>' . $name .'</p>');
-  $view->addBody('<p><button type="button" class="btn btn-default">Info</button></p>');
-  $view->addBody('</div>');
-  $view->addBody('</div>');
-  $view->addBody('</div>');
+  $view->addBody('<p>' . $interns['nom_Prenom'] .'</p>');
+  $view->addBody('<p>' .
+		 '<a href="index.php?action=viewSessionIntern&id=' .
+$interns['ID_STAGIAIRE'] . '">' .
+		 '<button type="button" class="btn btn-default">Info</button></a>' .
+		 '</p>');
   $view->addBody('</div>');
   $view->addBody('</div>');
   $view->addBody('</div>');
@@ -78,7 +79,7 @@ function viewSessionDetail($view, $info, $detail, $interns)
   $view->addBody("<button class='btn btn-link' data-toggle='collapse' data-target='#collapse1' aria-expanded='false' aria-controls='collapse'1>");
   $view->addBody($info[0]['NOM_SESSION']);
   $view->addBody("</button>");
-  $internNumberInSession = getInternsNumberBySessionId ($info[0]['ID_SESSION']);
+  $internNumberInSession = getInternsNumberBySessionId($info[0]['ID_SESSION']);
   $view->addBody("<span id='date' class='badge badge-light'>" . (ISSET($internNumberInSession[0])
           ? $internNumberInSession[0]['nbPlacePrises'] . " / " . $info[0]['NB_PLACE'] . "</span>"
           : "0 / " . $info[0]['NB_PLACE'] . "</span>"));
@@ -92,6 +93,7 @@ function viewSessionDetail($view, $info, $detail, $interns)
   viewSessionDetailInfo($view, $info);
   viewSessionDetailDetail($view, $detail);
   $view->addBody("</table>");
+  $view->addBody("</div>");
   $view->addBody("</div>");
   $view->addBody("</div>");
 

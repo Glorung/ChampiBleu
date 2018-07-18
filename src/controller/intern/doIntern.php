@@ -5,16 +5,16 @@ require_once('src/view/intern/viewIntern.php');
 
 function doInternByID($id)
 {
-    $data = getStagiaireById($id);
+    $data = getInternById($id);
     // Récupère les informations du stagiaire sous forme de tableau associatif
-    viewStagiaire(new view(), $data);
+    viewIntern(new view(), $data);
     // Affiche la page web via la class view (-> src/view/view.class.php)
 }
 
 function doInternByName($name)
 {
-    $data = getStagiaireByName($name);
+    $data = getInternByName($name);
     // Récupère les informations du stagiaire sous forme de tableau associatif
-    viewStagiaire(new view(), $data);
+    viewIntern(new view(), $data);
     // Affiche la page web via la class view (-> src/view/view.class.php)
 }
